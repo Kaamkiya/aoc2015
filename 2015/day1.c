@@ -7,9 +7,11 @@ int main() {
   FILE *inputfile = fopen("day1.txt", "r");
   if (inputfile == NULL) {
     perror("Failed to open input file.");
+    return 1;
   }
 
   fscanf(inputfile, "%s", &input);
+  fclose(inputfile);
 
   int floor = 0;
   int basement_entry = -1;
